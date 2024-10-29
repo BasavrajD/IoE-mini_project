@@ -4,7 +4,7 @@
    https://srituhobby.com
 */
 //Include the library files
-#define BLYNK_TEMPLATE_ID "TMPL3ct8rmRFz" 
+#define BLYNK_TEMPLATE_ID "" //enter your template id here 
 #define BLYNK_TEMPLATE_NAME "WATER LEVEL MONITORING SYSTEM" 
  
 #include <LiquidCrystal_I2C.h>
@@ -15,9 +15,9 @@
 //Initialize the LCD display
 LiquidCrystal_I2C lcd(0x27, 16, 2);
  
-char auth[] = "CkPJpij_FsDCnOPM7yWMf2qXH1pn0nNb";//Enter your Auth token
-char ssid[] = "Dhamanage";//Enter your WIFI name
-char pass[] = "rajgauri12#";//Enter your WIFI password
+char auth[] = "";//Enter your Auth token
+char ssid[] = "";//Enter your WIFI name
+char pass[] = "";//Enter your WIFI password
  
 BlynkTimer timer;
  
@@ -129,6 +129,8 @@ void ultrasonic() {
     digitalWrite(LED3, HIGH);
     digitalWrite(LED4, HIGH);
     digitalWrite(LED5, HIGH);
+
+    Blynk.logEvent("tankfull", "Tank is Full, turn off the motor");
   }
 }
  
